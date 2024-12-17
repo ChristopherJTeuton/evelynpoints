@@ -1,0 +1,324 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #a7ffeb; /* Light green background */
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.patterns {
+    height: auto;
+    padding: 10px 0;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+}
+
+svg text {
+    font-family: Lora;
+    letter-spacing: 10px;
+    stroke: #ffa5d8;
+    font-size: 75px; /* 50% smaller */
+    font-weight: 700;
+    stroke-width: 3;
+    animation: textAnimate 5s infinite alternate;
+}
+
+@keyframes textAnimate {
+    0% {
+        stroke-dasharray: 0 50%;
+        stroke-dashoffset: 20%;
+        fill: hsl(189, 68%, 75%);
+    }
+    100% {
+        stroke-dasharray: 50% 0;
+        stroke-dashoffset: -20%;
+        fill: hsla(189, 68%, 75%, 0%);
+    }
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1000px; /* Increased max-width to accommodate 7 columns */
+    margin: auto;
+    padding: 20px;
+    background-color: #fff3cd; /* Match the points history modal background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure the container is positioned relative */
+}
+
+.date-time {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.evelyn-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.points-display {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.points-box {
+    border: 2px solid #38ef7d;
+    border-radius: 10px;
+    padding: 10px;
+    width: 30%;
+    background-color: #e0f7fa; /* Light blue background */
+    margin-bottom: 10px;
+}
+
+.points-box h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.points-box p {
+    font-size: 2em;
+    margin: 0;
+}
+
+.points-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Changed to 7 columns */
+    gap: 20px; /* Increased gap for more spacing */
+}
+
+.points-grid button {
+    font-size: 1.4em; /* Increased font size */
+    padding: 25px; /* Increased padding for bigger buttons */
+    background-color: #76d275; /* Less vibrant green background */
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%; /* Ensure all buttons are the same size */
+}
+
+.points-grid button:hover {
+    background-color: #4caf50;
+    transform: scale(1.1);
+}
+
+.points-grid button:active {
+    transform: scale(0.9);
+}
+
+.history-button {
+    margin-top: 20px;
+    padding: 15px 30px; /* Increased padding for consistency */
+    background-color: #76d275; /* Less vibrant green background */
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.2em;
+}
+
+.history-button:hover {
+    background-color: #4caf50;
+    transform: scale(1.1);
+}
+
+.history-button:active {
+    transform: scale(0.9);
+}
+
+.neon {
+    animation: neon 1.5s infinite;
+}
+
+@keyframes neon {
+    0%, 100% {
+        text-shadow:
+            0 0 5px #38ef7d,
+            0 0 10px #38ef7d,
+            0 0 15px #38ef7d,
+            0 0 20px #38ef7d,
+            0 0 30px #38ef7d,
+            0 0 40px #38ef7d,
+            0 0 50px #38ef7d,
+            0 0 60px #38ef7d;
+    }
+    50% {
+        text-shadow:
+            0 0 10px #38ef7d,
+            0 0 20px #38ef7d,
+            0 0 30px #38ef7d,
+            0 0 40px #38ef7d,
+            0 0 50px #38ef7d,
+            0 0 60px #38ef7d,
+            0 0 70px #38ef7d,
+            0 0 80px #38ef7d;
+    }
+}
+
+.fireworks {
+    animation: fireworks 1s infinite;
+}
+
+@keyframes fireworks {
+    0% { background-color: #38ef7d; }
+    50% { background-color: #ffd700; }
+    100% { background-color: #38ef7d; }
+}
+
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 1200px) {
+    .points-grid {
+        grid-template-columns: repeat(5, 1fr); /* Adjust for smaller screens */
+    }
+
+    .points-grid button {
+        font-size: 1.2em;
+        padding: 22px;
+    }
+}
+
+@media (max-width: 900px) {
+    .points-grid {
+        grid-template-columns: repeat(4, 1fr); /* Adjust for smaller screens */
+    }
+
+    .points-grid button {
+        font-size: 1.1em;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .points-grid {
+        grid-template-columns: repeat(3, 1fr); /* Adjust for smaller screens */
+    }
+
+    .points-grid button {
+        font-size: 1em;
+        padding: 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .points-grid {
+        grid-template-columns: repeat(2, 1fr); /* Adjust for smaller screens */
+    }
+
+    .points-grid button {
+        font-size: 1em;
+        padding: 15px;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fff3cd;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    margin-bottom: 20px;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: space-around;
+}
+
+.history-column {
+    width: 30%;
+    text-align: left;
+    background-color: #e0f7fa; /* Light blue background */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.history-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.fireworks-container {
+    position: absolute;
+    pointer-events: none; /* Ensure it doesn't interfere with other interactions */
+    z-index: 1000; /* Ensure it is on top of all other elements */
+    display: none; /* Hidden by default */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fireworks-container img {
+    position: absolute;
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+}
